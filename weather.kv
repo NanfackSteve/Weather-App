@@ -1,0 +1,58 @@
+#:kivy 1.0
+
+AddLocationForm:
+
+<AddLocationForm>
+
+    orientation: "vertical"
+    search_input: search_box
+    search_results: search_results_list
+    background_color: 1,0,0,1
+    BoxLayout:
+        #BoxLayout Property
+        height: "40dp"
+        size_hint_y: None
+
+        #BoxLayout Components
+        TextInput:
+            id : search_box
+            size_hint_x: 40
+            focus: True
+            multiline: False
+            hint_text: 'Enter a city name'
+            on_text_validate: if(search_box.text != ''): root.search_location()
+
+        Button:
+            text: "Search"
+            size_hint_x: 25
+            on_press: if(search_box.text != ''): root.search_location()
+
+        Button:
+            text: "Current Location"
+            size_hint_x: 35
+
+    RecyclerView:
+        id: search_results_list
+        viewclass: 'Label'
+        data: []
+
+        RecycleBoxLayout:
+            orientation: 'vertical'
+            default_size: None, dp(26)
+            default_size_hint: 1, None
+            size_hint_y: None
+            height: self.minimum_height
+
+    BoxLayout:
+        height: "40dp"
+        size_hint_y: None
+
+        canvas.before:
+            Color:
+                rgba: (1, 0, 0, 1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: "Powered by #sudo "
