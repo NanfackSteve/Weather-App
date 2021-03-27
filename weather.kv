@@ -1,35 +1,94 @@
-#:kivy 1.0
+#:kivy 1.4
+#:import randint random.randint
+#:import hex kivy.utils.get_color_from_hex
 
-AddLocationForm:
+WeatherRoot:
 
-<AddLocationForm>
-
-    orientation: "vertical"
+<WeatherRoot>:
     search_input: search_box
-    search_results: search_results_list
-    background_color: 1,0,0,1
-    BoxLayout:
-        #BoxLayout Property
-        height: "40dp"
-        size_hint_y: None
+    #search_results: search_results_list
+    size_hint: 1, 1
+    canvas.before:
+        Color:
+            rgba: 1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
-        #BoxLayout Components
-        TextInput:
-            id : search_box
-            size_hint_x: 40
-            focus: True
-            multiline: False
-            hint_text: 'Enter a city name'
-            on_text_validate: if(search_box.text != ''): root.search_location()
+    FloatLayout:
+        orientation: "vertical"
+        opacity: 0.8
+        canvas.before:
+            Rectangle:
+                pos: root.pos
+                size: root.size
+                source: "images/weather7.jpg"
+                #source: "images/weather{}.jpg".format(randint(1,8))
 
-        Button:
-            text: "Search"
-            size_hint_x: 25
-            on_press: if(search_box.text != ''): root.search_location()
+    Label:
+        text:'[b]Get The Weather of Any Place in the World [/b]'
+        font_size: "20sp"
+        color: 1,1,1,1
+        opacity: 1
+        markup: True
+        pos_hint: {'center_x':0.5, 'center_y':0.6}
 
-        Button:
-            text: "Current Location"
-            size_hint_x: 35
+    TextInput:
+        id : search_box
+    	size_hint: None, None
+        focus: False
+        multiline: False
+    	height: "35dp"
+    	width: "250dp"
+    	halign: 'center'
+        opacity: 0.9
+        hint_text: 'Enter a city name'
+        hint_text_color: 0,0,0,0.7
+    	pos_hint: {'center_x':0.5, 'center_y':0.5}
+        on_text_validate: if(search_box.text != ''): root.search_location()
+
+    Button:
+        text: "     [b]Search[/b]"
+        markup: True
+        size_hint: None, None
+        size: 95, 35
+        pos_hint: {'center_x':0.4, 'center_y':0.4}
+        background_normal: ''
+        background_color: hex('#6200EA')
+        on_press: if(search_box.text != ''): root.search_location()
+        Image:
+            source: "images/icon_search.png"
+            size_hint: None, None
+            width: self.parent.width - 15
+            height: self.parent.height - 15
+            x: self.parent.x - 20
+            y: self.parent.y + 6
+    Button:
+        text: "      [b]History[/b]"
+        markup: True
+        size_hint: None, None
+        size: 95, 35
+        pos_hint: {'center_x':0.6, 'center_y':0.4}
+        background_normal: ''
+        background_color: hex('#6200EA')
+        Image:
+            source: "images/icon_history.png"
+            size_hint: None, None
+            width: self.parent.width - 15
+            height: self.parent.height - 15
+            x: self.parent.x - 20
+            y: self.parent.y + 8
+
+    Label:
+        opacity: 1
+        text:"Design by @sudo © Copyright"
+        pos_hint: {'center_x':0.5, 'center_y':0.05}
+
+<HistoryForm>:
+    orientation: "vertical"
+
+    Label:
+        text: 'History Result Search'
 
     RecyclerView:
         id: search_results_list
@@ -42,17 +101,3 @@ AddLocationForm:
             default_size_hint: 1, None
             size_hint_y: None
             height: self.minimum_height
-
-    BoxLayout:
-        height: "40dp"
-        size_hint_y: None
-
-        canvas.before:
-            Color:
-                rgba: (1, 0, 0, 1)
-            Rectangle:
-                pos: self.pos
-                size: self.size
-
-        Label:
-            text: "Powered by #sudo "
