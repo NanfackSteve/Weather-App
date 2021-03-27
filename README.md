@@ -2,7 +2,7 @@
 Get the weather of all city around the World <br>
 
 <p>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjuom0UASifltt9zczEs9Odj4z1Pb7Hav3YQ&usqp=CAU" width="200" height="180"/>
+<img src="https://images-eu.ssl-images-amazon.com/images/I/61nuuPxUvaL.png" width="200" height="180"/>
 </p><br>
 
 <h4>---------- Pre-Requisite ----------</h4><br>
