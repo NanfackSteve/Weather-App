@@ -1,4 +1,4 @@
-# Weather App 
+# Weather App 🌦
 
 Get the weather of <b>all city</b> around the World <br>
 
