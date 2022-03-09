@@ -1,8 +1,9 @@
 # Weather App 
-Get the weather of all city around the World <br>
+
+Get the weather of <b>all city</b> around the World <br>
 
 <p>
-<img src="./weatherApp.png" width="200" height="180"/>
+<img src="./weatherApp.png" width="400" height="350"/>
 </p><br>
 
 ## Pre-Requisite 
