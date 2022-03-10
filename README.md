@@ -3,7 +3,7 @@
 Get the weather of <b>all city</b> around the World <br>
 
 <p>
-<img src="./weatherApp.png" width="400" height="350"/>
+<img src="./weatherApp.png" width="400" height="300"/>
 </p><br>
 
 ## Pre-Requisite 
