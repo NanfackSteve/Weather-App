@@ -73,7 +73,7 @@ class Ui_MainWindow(object):
         self.backgrd.setStyleSheet("")
         self.backgrd.setInputMethodHints(QtCore.Qt.ImhNone)
         self.backgrd.setText("")
-        self.backgrd.setPixmap(QtGui.QPixmap("ui/../images/weather5.jpg"))
+        self.backgrd.setPixmap(QtGui.QPixmap("ui/../images/weather7.jpg"))
         self.backgrd.setScaledContents(True)
         self.backgrd.setObjectName("backgrd")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)

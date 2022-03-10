@@ -173,7 +173,7 @@ color: rgb(238, 238, 236);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../images/weather5.jpg</pixmap>
+     <pixmap>../images/weather7.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
