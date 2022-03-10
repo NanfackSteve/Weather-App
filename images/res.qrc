@@ -1,5 +1,7 @@
 <RCC>
-  <qresource prefix="/home/sun/Documents/prog_Python/QtDesigner/images">
-    <file>weather7.jpg</file>
+  <qresource prefix="newPrefix">
+    <file>gnome.png</file>
+    <file>icons8-warning-48.png</file>
+    <file>weather5.jpg</file>
   </qresource>
 </RCC>
